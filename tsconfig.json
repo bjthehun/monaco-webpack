@@ -1,0 +1,16 @@
+{
+	"compilerOptions": {
+		"baseUrl": ".",
+		"outDir": "./dist/",
+		"target": "es6",
+		"strict": true,
+		"sourceMap": true,
+		"allowJs": true,
+		"allowSyntheticDefaultImports": true,
+		"downlevelIteration": true,
+		"esModuleInterop": true,
+		"module": "ES2022",
+		"moduleResolution": "node",
+		"lib": ["ESNext", "DOM", "WebWorker"]
+	},
+}
