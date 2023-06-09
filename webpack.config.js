@@ -25,7 +25,7 @@ export default {
 				use: ['style-loader', 'css-loader']
 			},
 			{
-				test: /\.(png|jpe?g|gif|svg|pdf|mp3)$/,
+				test: /\.(png|jpe?g|gif|svg|pdf)$/,
 				use: [{
 					loader: 'file-loader',
 					options: {
@@ -35,8 +35,8 @@ export default {
 				}]
 			},
 			{
-				test: /\.wasm$/,
-				type: 'webassembly/async'
+				test: /\.(mp3|wasm)$/i,
+				type: 'asset/resource'
 			}
 		]
 	},

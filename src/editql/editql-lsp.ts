@@ -6,7 +6,6 @@ import {BrowserMessageReader, BrowserMessageWriter, Connection, createConnection
 import { createLanguageServices } from "./editql-module.js";
 import { EmptyFileSystem, startLanguageServer } from "langium";
 
-// TODO Get WebWorkers running. This will be fun.
 declare const self: DedicatedWorkerGlobalScope;
 
 // Browser Specific Setup Code

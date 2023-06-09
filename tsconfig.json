@@ -7,6 +7,8 @@
 		"sourceMap": true,
 		"allowJs": true,
 		"allowSyntheticDefaultImports": true,
+		"jsx": "react-jsx",
+		"jsxImportSource": "preact",
 		"downlevelIteration": true,
 		"esModuleInterop": true,
 		"module": "ES2022",

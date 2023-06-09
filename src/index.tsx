@@ -3,7 +3,7 @@ import { EditorClassic, UserConfig} from "monaco-editor-wrapper";
 import { initServices, MonacoLanguageClient } from "monaco-languageclient";
 import { MessageTransports, ErrorAction, CloseAction } from "vscode-languageclient/lib/common/client.js";
 import { buildWorkerDefinition } from "monaco-editor-workers";
-import { Component, createRef } from "preact";
+import { Component, createRef, render } from "preact";
 
 /**
  * Shared Properties:
@@ -79,7 +79,7 @@ export class QueryEditorInput extends Component<QuerySidebarProps> {
         // buildWorkerDefinition('node_modules/monaco-editor-workers/dist/workers', "http://localhost:8080", false);
 
         // Create a new Monaco Editor: Provide Configuration.
-        const exampleQuery = '';
+        const exampleQuery = 'QUERY EDITS WITH AUTO = "bjthehun';
         const userConfig : UserConfig = {
             wrapperConfig: {
                 useVscodeConfig: true,
@@ -160,7 +160,7 @@ export class QueryEditorInput extends Component<QuerySidebarProps> {
             connection.reader.onClose(() => this.languageClient?.stop());
             // Attempt to start the client.
             this.languageClient.start().then(
-                () => console.log("Connection ready")
+                () => console.log("Connection is ready.")
             );
             Promise.resolve();
         }
@@ -184,9 +184,22 @@ export class QueryEditorInput extends Component<QuerySidebarProps> {
      * Renders the input element.
      * @returns Element
      */
-    render(): Element {
+    render() {
         return <div>
-            <div id="editql-editor" ref={this.ref}></div>
+            <div id="editql-editor" ref={this.ref} style="height: 300px"></div>
         </div>;
     }
 }
+
+// Create LSP worker
+const newWorker: QuerySidebarProps = {
+    queryLSP: new Worker(
+        new URL('./editql/editql-lsp.js', import.meta.url), {
+            name: "Language Server for Queries",
+            type: "classic"
+        }
+    )
+}
+
+const component = <QuerySidebar queryLSP={newWorker.queryLSP}/>;
+render(component, document.body);
