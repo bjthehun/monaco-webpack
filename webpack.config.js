@@ -6,7 +6,7 @@ export default {
 	experiments: {
 		asyncWebAssembly: true,
 	},
-	entry: './src/index.ts',
+	entry: './src/index.tsx',
 	devServer: {
 		static: ['dist'],
 		host: '0.0.0.0',
@@ -41,9 +41,9 @@ export default {
 		]
 	},
 	resolve: {
-		extensions: ['.ts', '.js'],
+		extensions: ['.ts', '.js', '.tsx'],
 		extensionAlias: {
-			'.js': ['.js', '.ts']
+			'.js': ['.js', '.ts', '.tsx']
 		},
 		fallback: { 
 			"buffer": false,

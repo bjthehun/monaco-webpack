@@ -17,7 +17,9 @@
         "webpack-dev-server": "^4.15.0"
     },
     "dependencies": {
-        "monaco-editor-workers": "^0.37.0",
-        "monaco-editor-wrapper": "^2.0.0"
+        "langium": "^1.2.0",
+        "monaco-editor-workers": "^0.38.0",
+        "monaco-editor-wrapper": "^2.0.0",
+        "preact": "^10.15.1"
     }
 }

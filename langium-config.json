@@ -1,0 +1,9 @@
+{
+    "projectName": "EditQL",
+    "languages": [{
+        "id": "edit-ql",
+        "fileExtensions": ["eql"],
+        "grammar": "source/editql/grammar.langium"
+    }],
+    "out": "source/editql/generated"
+}
