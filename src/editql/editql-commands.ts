@@ -1,9 +1,8 @@
-import { AstNode, EmptyFileSystem, LangiumDocument} from "langium";
+import { AstNode, EmptyFileSystem } from "langium";
 import { createLanguageServices } from "./editql-module.js";
-import pkg from 'vscode-uri';
-const { URI } = pkg;
+import * as uriAPI from 'vscode-uri';
 
-const pathToQuery = URI.parse("memory://editql-query.document");
+export const pathToQuery = uriAPI.URI.parse("memory://currentQuery.eql");
 
 /**
  * Creates a document from the given content.
@@ -11,8 +10,7 @@ const pathToQuery = URI.parse("memory://editql-query.document");
  * @param content - string
  * @returns Promise<LangiumDocument>
  */
-export async function createQueryFromInput<T extends AstNode>(content: string): 
-    Promise<T> {
+export async function createQueryFromInput<T extends AstNode>(content: string) {
     // Access services, set roadmap as required.
     const memoryServices = createLanguageServices(EmptyFileSystem).customServices;
     const ws = memoryServices.shared.workspace;
@@ -21,7 +19,7 @@ export async function createQueryFromInput<T extends AstNode>(content: string):
     const document = ws.LangiumDocumentFactory.fromString(content, pathToQuery);
     await ws.DocumentBuilder.build(
         [document],
-         {validationChecks: 'all'}
+        {validationChecks: 'all'}
     );
     return document.parseResult?.value as T;
 }
