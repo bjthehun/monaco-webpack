@@ -4,7 +4,9 @@
     "type": "module",
     "scripts": {
         "start": "webpack-dev-server --mode=development",
-        "test": "c8 --temp-directory=\"./.nyc_output/\" mocha --loader=ts-node/esm --timeout 10000 \"test/**/test_*.ts\""
+        "grammar": "langium generate",
+        "test": "c8 --temp-directory=\"./.nyc_output/\" mocha --loader=ts-node/esm --timeout 10000 \"test/**/test_*.ts\"",
+        "postinstall": "monaco-treemending"
     },
     "devDependencies": {
         "@types/mocha": "^10.0.1",
@@ -13,20 +15,20 @@
         "file-loader": "^6.2.0",
         "fork-ts-checker-webpack-plugin": "^8.0.0",
         "html-webpack-plugin": "^5.5.3",
+        "langium-cli": "2.0.1",
         "mocha": "^10.2.0",
         "mocha-multi-reporters": "^1.5.1",
         "style-loader": "^3.3.3",
         "ts-loader": "^9.4.4",
         "ts-node": "^10.9.1",
-        "typescript": "^5.2.2",
+        "typescript": "^5.1.3",
         "webpack-cli": "^5.1.4",
         "webpack-dev-server": "^4.15.1"
     },
     "dependencies": {
-        "@codingame/monaco-vscode-api": "1.79.1",
-        "langium": "^1.2.0",
-        "monaco-editor-workers": "^0.38.0",
-        "monaco-editor-wrapper": "2.0.1",
+        "langium": "^2.0.1",
+        "monaco-editor-workers": "0.39.0",
+        "monaco-editor-wrapper": "2.1.1",
         "preact": "^10.15.1"
     }
 }

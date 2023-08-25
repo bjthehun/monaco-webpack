@@ -3,7 +3,8 @@
     "languages": [{
         "id": "edit-ql",
         "fileExtensions": ["eql"],
-        "grammar": "source/editql/grammar.langium"
+        "grammar": "src/editql/grammar.langium"
     }],
-    "out": "source/editql/generated"
+    "out": "src/editql/generated",
+    "importExtension": ".js"
 }

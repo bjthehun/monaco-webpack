@@ -13,6 +13,9 @@ export default {
 		proxy: {
 		}
 	},
+	externals: {
+		vscode: 'commonjs vscode'
+	},
 	module: {
 		rules: [
 			{

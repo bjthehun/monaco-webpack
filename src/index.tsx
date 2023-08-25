@@ -2,7 +2,6 @@ import { BrowserMessageReader, BrowserMessageWriter } from "vscode-languageserve
 import { EditorClassic, UserConfig} from "monaco-editor-wrapper";
 import { initServices, MonacoLanguageClient } from "monaco-languageclient";
 import { MessageTransports, ErrorAction, CloseAction } from "vscode-languageclient/lib/common/client.js";
-import { buildWorkerDefinition } from "monaco-editor-workers";
 import { Component, createRef, render } from "preact";
 
 /**

@@ -15,7 +15,7 @@ import {
     createDefaultModule, createDefaultSharedModule, inject 
 } 
 from "langium";
-import { EditQLGeneratedModule, EditQlGeneratedSharedModule } from "./generated/module.js";
+import { EditQLGeneratedModule, EditQLGeneratedSharedModule } from "./generated/module.js";
 import { EditQLValidator, configureValidations } from "./editql-validation.js";
 import { createQueryFromInput } from "./editql-commands.js";
 
@@ -63,7 +63,7 @@ export function createLanguageServices(context: DefaultSharedModuleContext): {
     // Injection of Defaults
     const sharedServices = inject(
         createDefaultSharedModule(context),
-        EditQlGeneratedSharedModule
+        EditQLGeneratedSharedModule
     );
     const customServices = inject(
         createDefaultModule({shared: sharedServices}),

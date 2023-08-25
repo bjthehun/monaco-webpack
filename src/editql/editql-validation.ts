@@ -3,7 +3,7 @@
  */
 import { ValidationAcceptor, ValidationChecks} from "langium"
 import { EditQLServices } from "./editql-module.js";
-import {EditQlAstType, Query} from "./generated/ast.js"
+import {EditQLAstType, Query} from "./generated/ast.js"
 
 /**
  * Configures Validation services.
@@ -12,7 +12,7 @@ export function configureValidations(languageServices: EditQLServices) {
     // Get Validator, Registry, Define Checks
     const registry = languageServices.validation.ValidationRegistry;
     const validator = languageServices.StatementValidator;
-    const checks: ValidationChecks<EditQlAstType> = {
+    const checks: ValidationChecks<EditQLAstType> = {
     }
     registry.register(checks, validator);
 }

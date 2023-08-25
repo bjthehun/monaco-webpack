@@ -19,7 +19,7 @@ export async function createQueryFromInput<T extends AstNode>(content: string) {
     const document = ws.LangiumDocumentFactory.fromString(content, pathToQuery);
     await ws.DocumentBuilder.build(
         [document],
-        {validationChecks: 'all'}
+        {validation: true}
     );
     return document.parseResult?.value as T;
 }

@@ -2,7 +2,7 @@
  * LSP main file for EditQL.
  */
 
-import {BrowserMessageReader, BrowserMessageWriter, Connection, createConnection} from "vscode-languageserver/browser";
+import {BrowserMessageReader, BrowserMessageWriter, Connection, createConnection} from "vscode-languageserver/browser.js";
 import { createLanguageServices } from "./editql-module.js";
 import { EmptyFileSystem, startLanguageServer } from "langium";
 
