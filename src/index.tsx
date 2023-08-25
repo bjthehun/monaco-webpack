@@ -86,19 +86,20 @@ export class QueryEditorInput extends Component<QuerySidebarProps> {
                 // Required services
                 serviceConfig: {
                     debugLogging: true,
-                    enableModelEditorService: true,
-                    modelEditorServiceConfig: {
-                        useDefaultFunction: true
+                    enableLanguagesService: true,
+                    enableModelService: true,
+                    configureEditorOrViewsServiceConfig: {
+                        enableViewsService: false,
+                        useDefaultOpenEditorFunction: true
                     },
-                    enableConfigurationService: true,
-                    configurationServiceConfig: {
-                        defaultWorkspaceUri: "/tmp/"
+                    configureConfigurationServiceConfig: {
+                        defaultWorkspaceUri: '/tmp/'
                     }
                 }
             },
             // Dummy Language Client Config.
             languageClientConfig: {
-                enabled: true
+                enabled: false
             },
             // Editor Config: Use Light Theme, disable minimap.
             editorConfig: {
