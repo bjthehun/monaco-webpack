@@ -30,5 +30,8 @@
         "monaco-editor-workers": "0.39.0",
         "monaco-editor-wrapper": "2.1.1",
         "preact": "^10.15.1"
+    },
+    "engines": {
+        "node": ">=16.0.0"
     }
 }
