@@ -11,9 +11,8 @@
 		"allowSyntheticDefaultImports": true,
 		"downlevelIteration": true,
 		"esModuleInterop": true,
-		"module": "ES2022",
+		"module": "Node16",
 		"moduleResolution": "Node16",
 		"lib": ["ESNext", "DOM", "DOM.Iterable", "WebWorker"],
-		"types": ["node", "mocha"]
 	}
 }
